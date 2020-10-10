@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +30,12 @@ encodeURIComponent(text));
 
 <form onsubmit="download(this['name'].value, this['text'].value)">
   <input type="text" name="name" value="test.txt">
-  <textarea rows=3 cols=50 name="text">PLEASE WRITE ANSWER HERE. </textarea>
-<input type="radio" name="radio" value="Option 1" onclick="getElementById('problem').value=this.value;"> Option 1<br>
-<input type="radio" name="radio" value="Option 2" onclick="getElementById('problem').value=this.value;"> Option 2<br>
-<form onsubmit="download(this['name'].value, this['text'].value)">
-<input type="text" name="problem" id="problem">
-  <input type="submit" value="SAVE">
+  <textarea rows=3 cols=50 name="text">Please type in this box. When you 
+
+click the Download button, the contents of this box will be downloaded to 
+
+your machine at the location you specify. Pretty nifty. </textarea>
+  <input type="submit" value="Download">
 </form>
 </body>
 </html>
