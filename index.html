@@ -31,20 +31,20 @@
         <!--Add few elements to the form-->
 
         <div>
-            <input type="text" id="txtlat" placeholder="Enter your latitude" />
+            <input type="text" id="txtName" placeholder="Enter your name" />
         </div>
         <div>
-            <input type="text" id="txtlon" placeholder="Enter your longitude" />
+            <input type="text" id="txtAge" placeholder="Enter your age" />
         </div>
         <div>
-            <input type="text" id="txtlang" placeholder="Enter your language" />
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
         </div>
         <div>
             <select id="selCountry">
                 <option selected value="">-- Choose the country --</option>
-                <option value="India">UK</option>
-                <option value="Japan">USA</option>
-                <option value="USA">Germany</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="USA">USA</option>
             </select>
         </div>
         <div>
@@ -61,17 +61,17 @@
     let saveFile = () => {
     	
         // Get the data from each element on the form.
-    	const name = document.getElementById('txtlat');
-        const age = document.getElementById('txtlon');
-        const email = document.getElementById('txtlang');
+    	const name = document.getElementById('txtName');
+        const age = document.getElementById('txtAge');
+        const email = document.getElementById('txtEmail');
         const country = document.getElementById('selCountry');
         const msg = document.getElementById('msg');
         
         // This variable stores all the data.
         let data = 
-            '\r lat: ' + lat.value + ' \r\n ' + 
-            'lon: ' +lon.value + ' \r\n ' + 
-            'lang: ' + lang.value + ' \r\n ' + 
+            '\r Name: ' + name.value + ' \r\n ' + 
+            'Age: ' +age.value + ' \r\n ' + 
+            'Email: ' + email.value + ' \r\n ' + 
             'Country: ' + country.value + ' \r\n ' + 
             'Message: ' + msg.value;
         
