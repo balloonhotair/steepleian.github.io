@@ -60,6 +60,12 @@
             <input type="text" id="txtWuunits" placeholder="Enter your Weather Underground Units" />
         </div>
         <div>
+            <input type="text" id="txtMekey" placeholder="Enter your METAR Key" />
+        </div>
+        <div>
+            <input type="text" id="txtMecode" placeholder="Enter your METAR Code" />
+        </div>
+        <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
 
@@ -78,6 +84,8 @@
         const ds_units = document.getElementById('txtDsunits');
         const wu_apikey = document.getElementById('txtWukey');
         const wu_units = document.getElementById('txtWuunits');
+        const me_apikey = document.getElementById('txtMekey');
+        const me_code = document.getElementById('txtMecode');
         
         // This variable stores all the data.
         let data = 
@@ -92,6 +100,8 @@
             '"' + 'ds_units'+'"' + ':' +"'"  + ds_units.value +"'," + ' \r\n ' +
             '"' + 'wu_apikey'+'"' + ':' +"'"  + wu_apikey.value +"'," + ' \r\n ' +
             '"' + 'wu_units'+'"' + ':' +"'"  + wu_units.value +"'," + ' \r\n ' +
+            '"' + 'me_apikey'+'"' + ':' +"'"  + me_apikey.value +"'," + ' \r\n ' +
+            '"' + 'me_code'+'"' + ':' +"'"  + me_code.value +"'," + ' \r\n ' +
             '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:$lat;$lon/?token=$aq_api_key' +"',"
         
         // Convert the text to BLOB.
