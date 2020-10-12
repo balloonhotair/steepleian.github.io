@@ -41,9 +41,11 @@
         <div>
             <input type="text" id="txtLang" placeholder="Enter your language" />
         </div>
-        
         <div>
-            <input type="continent" id="txtContinent" placeholder="Enter your Continent" />
+            <input type="text" id="txtContinent" placeholder="Enter your Continent" />
+        </div>
+        <div>
+            <input type="text" id="txtAqaqikey" placeholder="Enter your AQI Key" />
         </div>
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
@@ -59,13 +61,15 @@
         const lon = document.getElementById('txtLon');
         const lang = document.getElementById('txtLang');
         const continent = document.getElementById('txtContinent');
+        const aq_apikey = document.getElementById('txtAqaqikey');
         
         // This variable stores all the data.
         let data = 
             '\r lat: ' + lat.value + ' \r\n ' + 
             'lon: ' +lon.value + ' \r\n ' + 
             'lang: ' + lang.value + ' \r\n ' +  
-            'Continent: ' + continent.value;
+            'continent: ' + continent.value + ' \r\n ' +
+            'aq_apikey: ' + aq_apikey.value;
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
