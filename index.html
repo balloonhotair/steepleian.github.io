@@ -45,7 +45,19 @@
             <input type="text" id="txtContinent" placeholder="Enter your Continent" />
         </div>
         <div>
-            <input type="text" id="txtAqaqikey" placeholder="Enter your AQI Key" />
+            <input type="text" id="txtAqkey" placeholder="Enter your AQI Key" />
+        </div>
+        <div>
+            <input type="text" id="txtDskey" placeholder="Enter your DarkSky Key" />
+        </div>
+        <div>
+            <input type="text" id="txtDsunits" placeholder="Enter your DarkSky Units" />
+        </div>
+        <div>
+            <input type="text" id="txtWukey" placeholder="Enter your Weather Underground Key" />
+        </div>
+        <div>
+            <input type="text" id="txtWuunits" placeholder="Enter your Weather Underground Units" />
         </div>
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
@@ -61,18 +73,25 @@
         const lon = document.getElementById('txtLon');
         const lang = document.getElementById('txtLang');
         const continent = document.getElementById('txtContinent');
-        const aq_apikey = document.getElementById('txtAqaqikey');
-        
+        const aq_apikey = document.getElementById('txtAqkey');
+        const ds_apikey = document.getElementById('txtDskey');
+        const ds_units = document.getElementById('txtDsunits');
+        const wu_apikey = document.getElementById('txtWukey');
+        const wu_units = document.getElementById('txtWuunits');
         
         // This variable stores all the data.
         let data = 
             '\r {' + ' \r\n ' +
-            '"##'+'Start of user fields' + ' \r\n ' +
+            '"##'+'Start of user fields' +'",'+ ' \r\n ' +
             '"' + 'lat'+'"' + ':' +"'" + lat.value +"',"+ ' \r\n ' +
             '"' + 'lon'+'"' + ':' +"'"  +lon.value +"'," + ' \r\n ' + 
             '"' + 'lang'+'"' + ':' +"'"  + lang.value +"'," + ' \r\n ' +  
             '"' + 'continent'+'"' + ':' +"'"  + continent.value +"'," + ' \r\n ' +
             '"' + 'aq_apikey'+'"' + ':' +"'"  + aq_apikey.value +"'," + ' \r\n ' +
+            '"' + 'ds_apikey'+'"' + ':' +"'"  + ds_apikey.value +"'," + ' \r\n ' +
+            '"' + 'ds_units'+'"' + ':' +"'"  + ds_units.value +"'," + ' \r\n ' +
+            '"' + 'wu_apikey'+'"' + ':' +"'"  + wu_apikey.value +"'," + ' \r\n ' +
+            '"' + 'wu_units'+'"' + ':' +"'"  + wu_units.value +"'," + ' \r\n ' +
             '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:$lat;$lon/?token=$aq_api_key' +"',"
         
         // Convert the text to BLOB.
