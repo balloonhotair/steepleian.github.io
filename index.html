@@ -58,14 +58,14 @@
     	const lat = document.getElementById('txtLat');
         const lon = document.getElementById('txtLon');
         const lang = document.getElementById('txtLang');
-        const msg = document.getElementById('msg');
+        const continent = document.getElementById('txtContinent');
         
         // This variable stores all the data.
         let data = 
             '\r lat: ' + lat.value + ' \r\n ' + 
             'lon: ' +lon.value + ' \r\n ' + 
             'lang: ' + lang.value + ' \r\n ' +  
-            'Message: ' + msg.value;
+            'Continent: ' + continent.value;
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
