@@ -39,7 +39,7 @@
             <input type="text" id="txtLon" placeholder="Enter your longitude" />
         </div>
         <div>
-            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+            <input type="text" id="txtLang" placeholder="Enter your language" />
         </div>
         <div>
             <select id="selCountry">
@@ -64,7 +64,7 @@
         // Get the data from each element on the form.
     	const lat = document.getElementById('txtLat');
         const lon = document.getElementById('txtLon');
-        const email = document.getElementById('txtEmail');
+        const lang = document.getElementById('txtLang');
         const country = document.getElementById('selCountry');
         const msg = document.getElementById('msg');
         
@@ -72,7 +72,7 @@
         let data = 
             '\r lat: ' + lat.value + ' \r\n ' + 
             'lon: ' +lon.value + ' \r\n ' + 
-            'Email: ' + email.value + ' \r\n ' + 
+            'lang: ' + lang.value + ' \r\n ' + 
             'Country: ' + country.value + ' \r\n ' + 
             'Message: ' + msg.value;
         
