@@ -33,26 +33,15 @@
         <!--Add few elements to the form-->
 
         <div>
-            <input type="text" id="txtName" placeholder="Enter your name" />
+            <input type="text" id="txtLat" placeholder="Enter your latitude" />
         </div>
         <div>
-            <input type="text" id="txtAge" placeholder="Enter your age" />
+            <input type="text" id="txtLon" placeholder="Enter your longitude" />
         </div>
         <div>
-            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+            <input type="text" id="txtLang" placeholder="Enter your language" />
         </div>
-        <div>
-            <select id="selCountry">
-                <option selected value="">-- Choose the country --</option>
-                <option value="India">India</option>
-                <option value="Japan">Japan</option>
-                <option value="USA">USA</option>
-            </select>
-        </div>
-        <div>
-            <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
-        </div>
-        <div>
+        
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
 
@@ -62,19 +51,17 @@
     let saveFile = () => {
     	
         // Get the data from each element on the form.
-    	const name = document.getElementById('txtName');
-        const age = document.getElementById('txtAge');
-        const email = document.getElementById('txtEmail');
-        const country = document.getElementById('selCountry');
-        const msg = document.getElementById('msg');
+    	const lat = document.getElementById('txtLat');
+        const lon = document.getElementById('txtLon');
+        const lang = document.getElementById('txtLang');
+        
         
         // This variable stores all the data.
         let data = 
-            '\r Name: ' + name.value + ' \r\n ' + 
-            'Age: ' +age.value + ' \r\n ' + 
-            'Email: ' + email.value + ' \r\n ' + 
-            'Country: ' + country.value + ' \r\n ' + 
-            'Message: ' + msg.value;
+            '\r lat: ' + lat.value + ' \r\n ' + 
+            'lon: ' + lon.value + ' \r\n ' + 
+            'lang: ' + lang.value + ' \r\n ' +; 
+            
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
