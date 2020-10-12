@@ -33,7 +33,7 @@
         <!--Add few elements to the form-->
 
         <div>
-            <input type="text" id="txtName" placeholder="Enter your name" />
+            <input type="text" id="txtLat" placeholder="Enter your latitude" />
         </div>
         <div>
             <input type="text" id="txtAge" placeholder="Enter your age" />
@@ -62,7 +62,7 @@
     let saveFile = () => {
     	
         // Get the data from each element on the form.
-    	const name = document.getElementById('txtName');
+    	const lat = document.getElementById('txtLat');
         const age = document.getElementById('txtAge');
         const email = document.getElementById('txtEmail');
         const country = document.getElementById('selCountry');
@@ -70,7 +70,7 @@
         
         // This variable stores all the data.
         let data = 
-            '\r Name: ' + name.value + ' \r\n ' + 
+            '\r Name: ' + lat.value + ' \r\n ' + 
             'Age: ' +age.value + ' \r\n ' + 
             'Email: ' + email.value + ' \r\n ' + 
             'Country: ' + country.value + ' \r\n ' + 
