@@ -62,6 +62,7 @@
         const lang = document.getElementById('txtLang');
         const continent = document.getElementById('txtContinent');
         const aq_apikey = document.getElementById('txtAqaqikey');
+        const aq_url = 'https://api.waqi.info/feed/geo:$lat;$lon/?token=$aq_api_key';
         
         // This variable stores all the data.
         let data = 
@@ -69,7 +70,8 @@
             'lon: ' +lon.value + ' \r\n ' + 
             'lang: ' + lang.value + ' \r\n ' +  
             'continent: ' + continent.value + ' \r\n ' +
-            'aq_apikey: ' + aq_apikey.value;
+            'aq_apikey: ' + aq_apikey.value + ' \r\n ' +
+            'aq_url: ' + aq_url.value;
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
