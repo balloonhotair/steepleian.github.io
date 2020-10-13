@@ -108,8 +108,7 @@
         const al_ip = document.getElementById('txtAlip');
         const al_country = document.getElementById('txtAlcountry');
         const al_region = document.getElementById('txtAlregion');
-        const myaerisid = document.getElementById('txtAerisid');
-        const myaerissecret = document.getElementById('txtAerissecret');
+        
         
         // This variable stores all the data.
         let data = 
@@ -130,8 +129,6 @@
             '"' + 'al_ip'+'"' + ':' +"'"  + al_ip.value +"'," + ' \r\n ' +
             '"' + 'al_country'+'"' + ':' +"'"  + al_country.value +"'," + ' \r\n ' +
             '"' + 'al_region'+'"' + ':' +"'"  + al_region.value +"'," + ' \r\n ' +
-            '"' + 'myaerisid'+'"' + ':' +"'"  + myaerisid +"'," + ' \r\n ' +
-            '"' + 'myaerissecret'+'"' + ':' +"'"  + myaerissecret +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
             '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+'lat' +"',"
             
