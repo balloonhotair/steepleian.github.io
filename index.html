@@ -126,8 +126,10 @@
             '"' + 'al_region'+'"' + ':' +"'"  + al_region.value +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
             '"sub_fields"'+':'+"'lat,lon,lang,continent,aq_apikey,ds_apikey,ds_units,wu_apikey,wu_units,me_apikey,me_code,pu_id,al_ip,al_country,al_region'," + ' \r\n ' +
+            '"config_entries3"'+':'+"'''="+ ' \r\n ' +
             '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+lat.value +';'+lon.value+'/?token='+aq_apikey.value+"',"
             
+        
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
