@@ -77,12 +77,7 @@
         <div>
             <input type="text" id="txtAlregion" placeholder="Enter your Meteoalarm Region (European users only)" />
         </div>
-         <div>
-            <input type="text" id="txtAerisid" placeholder="Enter your Aeris Weather ID" />
-        </div>
-        <div>
-            <input type="text" id="txtAerissecret" placeholder="Enter your Aeris Weather Secret" />
-        </div>
+         
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
@@ -130,7 +125,7 @@
             '"' + 'al_country'+'"' + ':' +"'"  + al_country.value +"'," + ' \r\n ' +
             '"' + 'al_region'+'"' + ':' +"'"  + al_region.value +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
-            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+'console.log(lat);' +"',"
+            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+lat.value +"',"
             
         
         // Convert the text to BLOB.
