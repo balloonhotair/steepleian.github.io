@@ -133,12 +133,12 @@
             '"' + 'myaerisid'+'"' + ':' +"'"  + myaerisid +"'," + ' \r\n ' +
             '"' + 'myaerissecret'+'"' + ':' +"'"  + myaerissecret +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
-            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:$lat;$lon/?token=$aq_api_key' +"',"
-            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+"',"
+            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:' +"',"
+            
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'weewx-Weather34/services.txt';	   // The file to save the data.
+        const sFileName = 'weewx-Weather34'+'/'+'services.txt';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
