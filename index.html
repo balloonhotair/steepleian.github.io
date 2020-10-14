@@ -77,9 +77,7 @@
         <div>
             <input type="text" id="txtAlregion" placeholder="Enter your Meteoalarm Region (European users only)" />
         </div>
-        <div>
-            <input type="text" id="txtAlregion" placeholder="Enter your Web Services String (minimum requirement wu.eq.ki)" />
-        </div> 
+         
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
@@ -105,7 +103,6 @@
         const al_ip = document.getElementById('txtAlip');
         const al_country = document.getElementById('txtAlcountry');
         const al_region = document.getElementById('txtAlregion');
-        const services = document.getElementById('txtServices');
         
         
         // This variable stores all the data.
@@ -127,7 +124,6 @@
             '"' + 'al_ip'+'"' + ':' +"'"  + al_ip.value +"'," + ' \r\n ' +
             '"' + 'al_country'+'"' + ':' +"'"  + al_country.value +"'," + ' \r\n ' +
             '"' + 'al_region'+'"' + ':' +"'"  + al_region.value +"'," + ' \r\n ' +
-            '"' + 'services'+'"' + ':' +"'"  + services.value +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
             '"sub_fields"'+':'+"'lat,lon,lang,continent,aq_apikey,ds_apikey,ds_units,wu_apikey,wu_units,me_apikey,me_code,pu_id,al_ip,al_country,al_region'," + ' \r\n ' +
             '"config_entries3"'+':'+"'''="+ ' \r\n ' +
@@ -168,16 +164,16 @@
             "'ki_interval':'43200'"+','+ ' \r\n ' +
             "'ki_filename':'/var/www/html/weewx/weather34/jsondata/kindex.txt'"+','+ ' \r\n ' +
             "'me_url':'https://api.checkwx.com/metar/"+me_code.value+'/decoded'+"',"+ ' \r\n ' +
-            "'me_header':'X-API-Key:"+me_apikey.value+','+ ' \r\n ' +
+            "'me_header':'X-API-Key:"+me_apikey.value+"'"+','+ ' \r\n ' +
             "'me_interval':'3600'"+','+ ' \r\n ' +
             "'me_filename':'/var/www/html/weewx/weather34/jsondata/metar34.txt'"+','+ ' \r\n ' +
-            "'pu_url':'https://www.purpleair.com/json?show="+pu_id.value+','+ ' \r\n ' +
+            "'pu_url':'https://www.purpleair.com/json?show="+pu_id.value+"'"+','+ ' \r\n ' +
             "'pu_interval':'3600'"+','+ ' \r\n ' +
             "'pu_filename':'/var/www/html/weewx/weather34/jsondata/purpleair.txt'"+','+ ' \r\n ' +
-            "'al_url':'http://"+al_ip.value+'/weewx/weather34/eualert.php?country='+al_country.value+'&region='+al_region.value+','+ ' \r\n ' +
+            "'al_url':'http://"+al_ip.value+'/weewx/weather34/eualert.php?country='+al_country.value+'&region='+al_region.value+"'"+','+ ' \r\n ' +
             "'al_interval':'3600'"+','+ ' \r\n ' +
             "'al_filename':'/var/www/html/weewx/weather34/jsondata/meteoalarm.txt'"+','+ ' \r\n ' +
-            
+    
             
         
         '}'
