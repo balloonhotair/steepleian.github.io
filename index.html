@@ -148,10 +148,10 @@
             '"# Example services = ds.me.eq.ki.wu.aq.al.ah.ao.aa.pu\\n"' + ' \r\n ' +
             '"# Select your prefered time interval in seconds for each service\\n"' + ' \r\n ' +
              '{' + ' \r\n ' +
-            "'aq_url':'https://api.waqi.info/feed/geo:"+lat.value+';'+lon.value+'/?token='+lang.value+"'"+','+ ' \r\n ' +
+            "'aq_url':'https://api.waqi.info/feed/geo:"+lat.value+';'+lon.value+'/?token='+aq_apikey.value+"'"+','+ ' \r\n ' +
             "'aq_interval':'3600'"+','+ ' \r\n ' +
             "'aq_filename':'/var/www/html/weewx/weather34/jsondata/aqi.txt'"+','+ ' \r\n ' +
-            "'ds_url':'https://api.forecast.io/forecast/"+ds_apikey.value+'/'+lat.value+','+lon.value+'?lang='+lang.value+'&'+ds_units.value+'='+ds_units.value+"'"+','+ ' \r\n ' +
+            "'ds_url':'https://api.forecast.io/forecast/"+ds_apikey.value+'/'+lat.value+','+lon.value+'?lang='+lang.value+'&units'+'='+ds_units.value+"'"+','+ ' \r\n ' +
             "'ds_interval':'3600'"+','+ ' \r\n ' +
             "'ds_filename':'/var/www/html/weewx/weather34/jsondata/darksky.txt'"+','+ ' \r\n ' +
         
