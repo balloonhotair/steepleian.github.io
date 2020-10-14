@@ -7,23 +7,23 @@
             box-sizing: border-box;
         }
     	div {
-            padding: 10px;
+            padding: 2px;
             background-color: #f6f6f6;
             overflow: hidden;
         }
     	input[type=text], textarea, select {
-            font: 17px Calibri;
-            width: 100%;
-            padding: 12px;
+            font: 12px Arial;
+            width: 50%;
+            padding: 6px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
         input[type=button]{ 
-            font: 17px Calibri;
+            font: 12px Arial;
             width: auto;
             float: right;
             cursor: pointer;
-            padding: 7px;
+            padding: 4px;
         }
     </style>
 </head>
@@ -77,12 +77,7 @@
         <div>
             <input type="text" id="txtAlregion" placeholder="Enter your Meteoalarm Region (European users only)" />
         </div>
-         <div>
-            <input type="text" id="txtAerisid" placeholder="Enter your Aeris Weather ID" />
-        </div>
-        <div>
-            <input type="text" id="txtAerissecret" placeholder="Enter your Aeris Weather Secret" />
-        </div>
+         
         <div>
             <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
         </div>
@@ -108,8 +103,7 @@
         const al_ip = document.getElementById('txtAlip');
         const al_country = document.getElementById('txtAlcountry');
         const al_region = document.getElementById('txtAlregion');
-        const myaerisid = document.getElementById('txtAerisid');
-        const myaerissecret = document.getElementById('txtAerissecret');
+        
         
         // This variable stores all the data.
         let data = 
@@ -130,11 +124,37 @@
             '"' + 'al_ip'+'"' + ':' +"'"  + al_ip.value +"'," + ' \r\n ' +
             '"' + 'al_country'+'"' + ':' +"'"  + al_country.value +"'," + ' \r\n ' +
             '"' + 'al_region'+'"' + ':' +"'"  + al_region.value +"'," + ' \r\n ' +
-            '"' + 'myaerisid'+'"' + ':' +"'"  + myaerisid +"'," + ' \r\n ' +
-            '"' + 'myaerissecret'+'"' + ':' +"'"  + myaerissecret +"'," + ' \r\n ' +
             '"##'+'List of all user fields above to be replaced in strings below' +'",'+ ' \r\n ' +
-            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:$lat;$lon/?token=$aq_api_key' +"',"
-            '"' + 'aq_url'+'"' + ':' +"'"  + 'https://api.waqi.info/feed/geo:'+lat+';'+lon+'/?token='+aq_apikey +"',"
+            '"sub_fields"'+':'+"'lat,lon,lang,continent,aq_apikey,ds_apikey,ds_units,wu_apikey,wu_units,me_apikey,me_code,pu_id,al_ip,al_country,al_region'," + ' \r\n ' +
+            '"config_entries3"'+':'+"'''="+ ' \r\n ' +
+            "'Weather34WebServices' "+':'+ ' \r\n ' +
+            '"# Air quality, your own latitude, longitude, token and interval in seconds are required\\n"' + ' \r\n ' +
+            '"# Dark Sky, your own latitude, longitude, API key, language, units and interval in seconds required\\n"' + ' \r\n ' +
+            '"# DarkSky Units key us = US Units, ca = METRIC Units, si = METRICWX Units, uk2 = UK(metric with mph) Units\\n"' + ' \r\n ' +
+            '"# Example https://api.forecast.io/forecast/yourtokenhere/51.94,-0.987?lang=en&units=uk2\\n"' + ' \r\n ' +
+            '"# Weather Underground, your own latitude, longitude, API key, language, units and interval in seconds required\\n"' + ' \r\n ' +
+            '"# Weather Underground Units key e = US, m = METRIC, s = SI(with m/s Scandinavia), h = UK(with mph)\\n"' + ' \r\n ' +
+            '"# Example https://api.weather.com/v3/wx/forecast/daily/5day?geocode=51.94,-0.987&language=en&format=json&units=h&apiKey=yourapikeyhere\\n"' + ' \r\n ' +
+            '"# Earthquake reports interval in seconds required\\n"' + ' \r\n ' +
+            '"# K-Index reports interval in seconds required\\n"' + ' \r\n ' +
+            '"# Metar reports airport code, API Key and interval in seconds required\\n"' + ' \r\n ' +
+            '"# Example https://api.checkwx.com/metar/EGTK/decoded\\n"' + ' \r\n ' +
+            '"# Example X-API-Key:yourapikeyhere\\n"' + ' \r\n ' +
+            '"# Purpleair reports device ID and interval in seconds required\\n"' + ' \r\n ' +
+            '"# Example https://www.purpleair.com/json?show=38365\\n"' + ' \r\n ' +
+            '"# Meteoalrm European weather warnings country code, region code and interval in seconds required\\n"' + ' \r\n ' +
+            '"# Example http://192.168.1.232/weewx/weather34/eualert.php?country=UK&region=013\\n"' + ' \r\n ' +
+            '"# Select the services you require by creating a string of the services above\\n"' + ' \r\n ' +
+            '"# Example services = ds.me.eq.ki.wu.aq.al.ah.ao.aa.pu\\n"' + ' \r\n ' +
+            '"# Select your prefered time interval in seconds for each service\\n"' + ' \r\n ' +
+             '{' + ' \r\n ' +
+            
+            "'aq_interval':'3600'"+','+ ' \r\n ' +
+            "'aq_filename':'/var/www/html/weewx/weather34/jsondata/aqi.txt'"+','+ ' \r\n ' +
+        
+        '}'
+            
+        
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
