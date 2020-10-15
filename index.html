@@ -161,7 +161,11 @@
         <div>
             <label type="text"">Cloud Cover</label>
             <a style="color:teal;">></a>
-            <input type="text" id="txtCloud" placeholder="Enable Cloud Cover - True or False (False for the Americas)" />
+            <select id="selCloud">
+                <option selected value="">-- Choose (False for the Americas) --</option>
+                <option value="True">True</option>
+                <option value="False">False</option>                   
+            </select>  
         </div>
         <div>
             <label type="text">Click the Save button to save your input to services.txt in your default Download folder</label>
@@ -194,7 +198,7 @@
         const al_country = document.getElementById('txtAlcountry');
         const al_region = document.getElementById('txtAlregion');
         const services = document.getElementById('txtServices');
-        const enable = document.getElementById('txtCloud');
+        const enable = document.getElementById('selCloud');
         
         // This variable stores all the data.
         let data = 
