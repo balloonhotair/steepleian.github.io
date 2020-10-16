@@ -88,7 +88,14 @@
             <label for="text">DarkSky Units</label>
             </div>    
         <div>
-            <input type="text" id="txtDsunits" placeholder="Enter your DarkSky Units" />
+            <select id="selDsunits">
+                <option selected value="">-- Choose the units --</option>
+                <option value="us">US</option>
+                <option value="si">SI Metric</option>
+                <option value="ca">Canada</option>
+                <option value="uk2">UK (Metric with mph and miles)</option>
+                <option value="auto">auto</option>                   
+            </select> 
         </div>
         <div>
             <label for="text">Weather Underground Key</label>
@@ -174,7 +181,7 @@
         const continent = document.getElementById('txtContinent');
         const aq_apikey = document.getElementById('txtAqkey');
         const ds_apikey = document.getElementById('txtDskey');
-        const ds_units = document.getElementById('txtDsunits');
+        const ds_units = document.getElementById('selDsunits');
         const wu_apikey = document.getElementById('txtWukey');
         const wu_units = document.getElementById('txtWuunits');
         const me_apikey = document.getElementById('txtMekey');
