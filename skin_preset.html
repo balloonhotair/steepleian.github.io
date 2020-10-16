@@ -293,8 +293,9 @@
         
         // This variable stores all the data.
         let data = 
-            '\r {' + ' \r\n ' +
-            '"##'+'Start of user fields' +'",'+ ' \r\n ' +
+            '\r <?php' + ' \r\n ' +
+            
+            '$weatherflowID = '';'+ ' \r\n ' +
             '"' + 'lat'+'"' + ':' +"'" + lat.value +"',"+ ' \r\n ' +
             '"' + 'lon'+'"' + ':' +"'"  +lon.value +"'," + ' \r\n ' + 
             '"' + 'lang'+'"' + ':' +"'"  + lang.value +"'," + ' \r\n ' +  
@@ -382,7 +383,7 @@
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'services.txt';	   // The file to save the data.
+        const sFileName = 'settings1.php';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
