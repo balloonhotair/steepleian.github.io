@@ -35,6 +35,16 @@
             cursor: pointer;
             padding: 6px;
         }
+        input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+        width: 100%;    
+        }
         label[for=text]{ 
             font: 12px Arial;
             width: auto;
@@ -276,8 +286,7 @@
             </select>
         </div>    
         <div>
-            <input type="button" id="bt" value="Click to Save" onclick="saveFile()" />
-            <label type="text">This saves your input to services.txt in your default Download folder</label><br>
+            <input type="submit" id="bt" value="Download services.txt" onclick="saveFile()" />
         </div>
 
     </div>
