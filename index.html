@@ -27,6 +27,16 @@
             cursor: pointer;
             padding: 6px;
         }
+        input[type=select]{ 
+            font: 12px Arial;
+            color: #fff;
+            background: solid rgba(7,114,125,1);
+            width: 100%;
+            float: left;
+            cursor: pointer;
+            padding: 2px;
+            border: 1px solid rgba(7,114,125,1);
+        }
         label[for=text]{ 
             font: 12px Arial;
             color: #fff;
@@ -153,6 +163,16 @@
          </div>
         <div>
             <input type="text" id="txtServices" placeholder="Enter your Web Services String (Minimum requirement me.wu.eq.ki)" />
+        </div>
+        <div>
+            <label for="text">Enable Cloud Cover</label>
+         </div>
+        <div>
+            <select id="selCloud">
+                <option selected value="">-- Choose True or False --</option>
+                <option value="True">True</option>
+                <option value="False">False</option>                   
+            </select>  
         </div>
         <div>
             <label for="text">Land Mass</label>
