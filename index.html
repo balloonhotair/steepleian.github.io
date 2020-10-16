@@ -107,7 +107,13 @@
             <label for="text">Weather Underground Units</label>
             </div>    
         <div>
-            <input type="text" id="txtWuunits" placeholder="Enter your Weather Underground Units" />
+            <select id="selWuunits">
+                <option selected value="">-- Choose the units --</option>
+                <option value="e">Imperial</option>
+                <option value="m">Metric</option>
+                <option value="s">Scandinavia</option>
+                <option value="h">United Kingdom</option>
+            </select>
         </div>
         <div>
             <label for="text">METAR Key</label>
@@ -155,14 +161,27 @@
             <label for="text">Enable Cloud Cover</label>
             </div>    
         <div>
-            <input type="text" id="txtCloud" placeholder="Enable Cloud Cover - True or False" />
+            <select id="selCloud">
+                <option selected value="">-- Choose True or False --</option>
+                <option value="True">True</option>
+                <option value="False">False</option>                   
+            </select>
         </div>
         <div>
             <label for="text">Land Mass</label>
             </div>
         <div>    
         <div>
-            <input type="text" id="txtContinent" placeholder="Enter your Land Mass" />
+            <select id="selContinent">
+                <option selected value="">-- Choose Land Mass --</option>
+                <option value="eu">Europe</option>
+                <option value="af">Africa, Middle East</option>
+                <option value="ana">North America</option>
+                <option value="ama">Central America</option>
+                <option value="asa">South America</option>
+                <option value="seasia">South East Asia</option>
+                <option value="oce">Oceania</option>
+            </select>
         </div>    
         <div>
             <input type="button" id="bt" value="Click to Save" onclick="saveFile()" />
@@ -178,12 +197,12 @@
     	const lat = document.getElementById('txtLat');
         const lon = document.getElementById('txtLon');
         const lang = document.getElementById('txtLang');
-        const continent = document.getElementById('txtContinent');
+        const continent = document.getElementById('selContinent');
         const aq_apikey = document.getElementById('txtAqkey');
         const ds_apikey = document.getElementById('txtDskey');
         const ds_units = document.getElementById('selDsunits');
         const wu_apikey = document.getElementById('txtWukey');
-        const wu_units = document.getElementById('txtWuunits');
+        const wu_units = document.getElementById('selWuunits');
         const me_apikey = document.getElementById('txtMekey');
         const me_code = document.getElementById('txtMecode');
         const pu_id = document.getElementById('txtPuid');
@@ -191,7 +210,7 @@
         const al_country = document.getElementById('txtAlcountry');
         const al_region = document.getElementById('txtAlregion');
         const services = document.getElementById('txtServices');
-        const enable = document.getElementById('txtCloud');
+        const enable = document.getElementById('selCloud');
         
         // This variable stores all the data.
         let data = 
