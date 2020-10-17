@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WeeWX Weather34 Pre-install Web Services Settings Page</title>
     <style>
         * {
             box-sizing: border-box;
             font: 18px Arial;
             padding: 5px;
-            background: black;
-            color: silver;
         }
     	div {
             padding: 2px;
-            background-color: black;
+            background-color: lightblue;
             overflow: hidden;
         }
     	input[type=text], textarea, select {
             font: 12px Arial;
-            color: #fff;
-            background-color: rgba(7,114,125,1);
             width: 100%;
-            padding: 2px;
-            border: 1px solid rgba(7,114,125,1);
+            padding: 6px;
+            border: 2px solid #ccc;
             border-radius: 4px;
-            resize: vertical;
+        }
+        input[type=select]{ 
+            font: 12px Arial;
+            width: 100%;
+            cursor: pointer;
+            padding: 6px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
         }
         input[type=button]{ 
             font: 12px Arial;
-            color: #fff;
-            background: green;
-            width: 100%;
+            width: auto;
             float: left;
             cursor: pointer;
-            padding: 10px;
-            border: 1px solid green;
+            padding: 6px;
         }
         input[type=submit] {
         background-color: #4CAF50;
@@ -46,33 +45,18 @@
         float: left;
         width: 100%;    
         }
-        input[type=select]{ 
+        label[for=text]{ 
             font: 12px Arial;
-            color: #fff;
-            background: solid rgba(7,114,125,1);
+            text-align: right;
             width: 100%;
             float: left;
             cursor: pointer;
-            padding: 2px;
-            border: 1px solid rgba(7,114,125,1);
+            padding: 6px;
         }
-        label[type=text]{ 
-            font: 12px Arial;
-            color: #fff;
-            background-color: rgba(86,95,103,1);
-            width: 100%;
-            text-align: right;
-            float: left;
-            padding: 2px 2px 2px 2px;
-            display: inline-block;
-            border: 1px solid rgba(86,95,103,1);
-            border-radius: 4px;
-            
-        }
-            .container {
+        .container {
             border-radius: 5px;
             border: 2px solid rgba(86,95,103,1);    
-            background-color: black;
+            background-color: grey;
             padding: 5px;
         }
         .col-25 {
@@ -99,7 +83,6 @@
         width: 100%;
         margin-top: 0;
         }
-        }
         
     </style>
 </head>
@@ -111,7 +94,7 @@
   
     <div class="row">
       <div class="col-25">
-        <label type="text">Latitude</label>
+        <label for="text">Latitude</label>
       </div>
       <div class="col-75">
         <input type="text" id="txtLat" placeholder="Enter your Latitude">
@@ -119,7 +102,7 @@
     </div>
         <div class="row">
       <div class="col-25">
-        <label type="text">Longitude</label>
+        <label for="text">Longitude</label>
       </div>
       <div class="col-75">
         <input type="text" id="txtLon" placeholder="Enter your Longitude">
@@ -127,7 +110,7 @@
     </div>
         <div class="row">
       <div class="col-25">
-        <label type="text">Language</label>
+        <label for="text">Language</label>
       </div>
       <div class="col-75">
         <input type="text" id="txtLang" placeholder="Enter your Language">
@@ -135,25 +118,28 @@
     </div>
         <div class="row">
       <div class="col-25">
-        <label type="text">AQI Key</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="txtAqikey" placeholder="Enter your AQI Key">
-      </div>
+            <label for="text">AQI Key</label>
+            </div>    
+        <div class="col-75">
+            
+            <input type="text" id="txtAqkey" placeholder="Enter your AQI Key" />
+        </div>
     </div>
         <div class="row">
       <div class="col-25">
-        <label type="text">DarkSky Key</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="txtDskey" placeholder="Enter your DarkSky Key">
-      </div>
-    </div>
+            <label for="text">DarkSky Key</label>
+            </div>    
+        <div class="col-75">
+            
+            <input type="text" id="txtDskey" placeholder="Enter your DarkSky Key" />
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">DarkSky Units</label>
-            </div>                   
-            <div class="col-75">
+      <div class="col-25">
+            <label for="text">DarkSky Units</label>
+            </div>    
+        <div class="col-75">
+            
             <select id="selDsunits">
                 <option selected value="">-- Choose the units --</option>
                 <option value="us">US</option>
@@ -161,94 +147,116 @@
                 <option value="ca">Canada</option>
                 <option value="uk2">UK (Metric with mph and miles)</option>
                 <option value="auto">auto</option>                   
-            </select>  
-        </div></div>
+            </select> 
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Weather Underground Key</label>
-            </div>
-            <div class="col-75">                      
+      <div class="col-25">
+            <label for="text">Weather Underground Key</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtWukey" placeholder="Enter your Weather Underground Key" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Weather Underground Units</label>
-            </div>
-            <div class="col-75">
+      <div class="col-25">
+            <label for="text">Weather Underground Units</label>
+            </div>    
+        <div class="col-75">
+            
             <select id="selWuunits">
                 <option selected value="">-- Choose the units --</option>
                 <option value="e">Imperial</option>
                 <option value="m">Metric</option>
                 <option value="s">Scandinavia</option>
                 <option value="h">United Kingdom</option>
-            </select>                      
-                                                           
-        </div></div>
+            </select>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">METAR Key</label>
-            </div>
-            <div class="col-75">                      
+      <div class="col-25">
+            <label for="text">METAR Key</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtMekey" placeholder="Enter your METAR Key" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">METAR Code</label>
-            </div>
-            <div class="col-75">
+      <div class="col-25">
+            <label for="text">METAR Code</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtMecode" placeholder="Enter your METAR Code" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">PurpleAir ID</label>
-            </div>
-            <div class="col-75">                      
+      <div class="col-25">
+            <label for="text">PurpleAir ID</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtPuid" placeholder="Enter your PurpleAir ID" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Local Webserver IP Address</label>
-            </div>
-            <div class="col-75">
-            <input type="text" id="txtAlip" placeholder="Enter local Web Server IP Address" />
-        </div></div>
+      <div class="col-25">
+            <label for="text">Local Web Server IP Address</label>
+            </div>    
+        <div class="col-75">
+            
+            <input type="text" id="txtAlip" placeholder="Enter Local Web Server IP Address" />
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Meteoalarm Country Code</label>
-            </div>
-            <div class="col-75">                      
+      <div class="col-25">
+            <label for="text">Meteoalarm Country</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtAlcountry" placeholder="Enter your Meteoalarm Country (European users only)" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Metoalarm Region Code</label>
-            </div>
-            <div class="col-75">
+      <div class="col-25">
+            <label for="text">Meteoalarm Region</label>
+            </div>    
+        <div class="col-75">
+            
             <input type="text" id="txtAlregion" placeholder="Enter your Meteoalarm Region (European users only)" />
-        </div></div>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Web Services String</label>
-            </div>
-            <div class="col-75">                      
-            <input type="text" id="txtServices" placeholder="Enter your Web Services String (Minimum requirement me.wu.eq.ki)" />
-        </div></div>
+      <div class="col-25">
+            <label for="text">Active Web Services Code String</label>
+            </div>    
+        <div class="col-75">
+            
+            <input type="text" id="txtServices" placeholder="Enter your Active Web Services Code String (Minimum requirement me.wu.eq.ki)" />
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">
-            <label type="text"">Cloud Cover</label>
-            </div>
-            <div class="col-75">
+      <div class="col-25">
+            <label for="text">Enable Cloud Cover</label>
+            </div>    
+        <div class="col-75">
+            
             <select id="selCloud">
                 <option selected value="">-- Choose True or False --</option>
                 <option value="True">True</option>
                 <option value="False">False</option>                   
-            </select>  
-        </div></div>
+            </select>
+        </div>
+        </div>
         <div class="row">
-        <div class="col-25">    
-            <label type="text"">Land Mass</label>
+      <div class="col-25">
+            <label for="text">Land Mass</label>
             </div>
-            <div class="col-75">                      
+            
+        <div class="col-75">
+            
             <select id="selContinent">
                 <option selected value="">-- Choose Land Mass --</option>
                 <option value="eu">Europe</option>
@@ -259,15 +267,14 @@
                 <option value="seasia">South East Asia</option>
                 <option value="oce">Oceania</option>
             </select>
-        
-        </div></div>
-        <div>
-            <input type="submit" id="bt" value="Download services.txt" onclick="saveFile()" /></br>
-        
-            
         </div>
+            </div>
+        <div>
+            <input type="submit" id="bt" value="Download services.txt" onclick="saveFile()" />
+        </div>
+            </div>
 
-    </div>
+    
 </body>
 <script>
     let saveFile = () => {
@@ -276,6 +283,7 @@
     	const lat = document.getElementById('txtLat');
         const lon = document.getElementById('txtLon');
         const lang = document.getElementById('txtLang');
+        const continent = document.getElementById('selContinent');
         const aq_apikey = document.getElementById('txtAqkey');
         const ds_apikey = document.getElementById('txtDskey');
         const ds_units = document.getElementById('selDsunits');
@@ -289,13 +297,11 @@
         const al_region = document.getElementById('txtAlregion');
         const services = document.getElementById('txtServices');
         const enable = document.getElementById('selCloud');
-        const continent = document.getElementById('selContinent');                                                                  
         
         // This variable stores all the data.
         let data = 
-            '\r <?php' + ' \r\n ' +
-            
-            '$weatherflowID = '';'+ ' \r\n ' +
+            '\r {' + ' \r\n ' +
+            '"##'+'Start of user fields' +'",'+ ' \r\n ' +
             '"' + 'lat'+'"' + ':' +"'" + lat.value +"',"+ ' \r\n ' +
             '"' + 'lon'+'"' + ':' +"'"  +lon.value +"'," + ' \r\n ' + 
             '"' + 'lang'+'"' + ':' +"'"  + lang.value +"'," + ' \r\n ' +  
@@ -383,7 +389,7 @@
         
         // Convert the text to BLOB.
         const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'settings1.php';	   // The file to save the data.
+        const sFileName = 'services.txt';	   // The file to save the data.
 
         let newLink = document.createElement("a");
         newLink.download = sFileName;
